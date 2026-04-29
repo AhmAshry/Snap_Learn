@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./sign_in&up.css">
+        <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <title>Snap Learn</title>
+</head>
+<body>
+
+ <!-- start navbar -->
+    <div class="navbar">
+      <div class="container">
+        <div class="logo">
+          <img src="./img/snappplearn png.png" alt="" />
+        </div>
+
+        <div class="search">
+          <i class="fa-brands fa-sistrix"></i>
+          <input type="text" placeholder="Search courses..." />
+        </div>
+
+        <div class="rightSide">
+          <ul>
+            <li><a href="home.html">About us</a></li>
+            <li><a href="all_courses.html">All Courses</a></li>
+            <li><a href="form.html">form</a></li>
+            <li><a href="student_activity.html">Student Activity</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+
+          <div class="buttons">
+            <a href="sign_in&up.html#signin" class="signin">Sign In</a>
+            <a href="sign_in&up.html#signup" class="signup">Sign Up</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end navbar -->
+
+
+<!-- ====================== Auth Section ====================== -->
+<section class="auth-section">
+    <div class="auth-wrapper">
+        
+        <!-- الجانب الأيسر - الصورة + النص -->
+        <div class="auth-left">
+            <div class="overlay"></div>
+            <div class="auth-left-content">
+                <h1>Welcome to <span class="gold">Snap Learn</span></h1>
+                <p>Transform your future with world-class education designed for the modern learner</p>
+            </div>
+        </div>
+
+        <!-- الجانب الأيمن - النموذج -->
+        <div class="auth-right">
+            <!-- التبويب -->
+            <div class="auth-tabs">
+                <button id="signin-tab" class="tab-btn active">Sign In</button>
+                <button id="signup-tab" class="tab-btn">Sign Up</button>
+            </div>
+
+            <!-- نموذج Sign In -->
+            <form id="signin-form" class="auth-form">
+                <h2>Sign In</h2>
+                
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="example@email.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="submit-btn gold-btn">Sign In</button>
+                
+                <p class="forgot">Forget your password</p>
+            </form>
+
+            <!-- نموذج Sign Up -->
+            <form id="signup-form" class="auth-form hidden">
+                <h2>Create Account</h2>
+                
+                <div class="input-group">
+                    <label>Full name</label>
+                    <input type="text" placeholder="Ahmed Ashry" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="example@email.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+
+                <button type="submit" class="submit-btn gold-btn">Create Account</button>
+            </form>
+
+            <p class="switch-text">
+                <span id="switch-to-signup">Don't have an account? Register now</span>
+            </p>
+        </div>
+    </div>
+</section>
+
+    <!-- start footer -->
+
+    <footer>
+      <div class="container">
+
+        <!-- Left: Share Your Feedback -->
+        <div class="footer-feedback">
+          <h3>Share Your Feedback</h3>
+          <p>Rate your experience:</p>
+          <div class="rate">
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+          </div>
+          <textarea placeholder="Share your thoughts, suggestions, or concerns with us..."></textarea>
+          <button class="submit-btn">Submit Feedback</button>
+        </div>
+
+        <!-- Right: Connect With Us -->
+        <div class="footer-connect">
+          <h3>Connect With Us</h3>
+          <p>Follow us on social media to stay updated with the latest courses and educational content.</p>
+
+          <div class="social-icons">
+            <a href="https://www.instagram.com/snaplearn.eg?igsh=eTJxeXhta3NpOTd4" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@snaplearn.eg" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+
+          <h4>Quick Links</h4>
+          <div class="quick-links">
+            <a href="#">About Us</a>
+            <a href="#">Careers</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Snap Learn. All rights reserved. Empowering learners worldwide.</p>
+      </div>
+    </footer> 
+
+    <!-- end footer -->
+
+
+    <!-- js code for footer -->
+
+    <script>
+      const stars = document.querySelectorAll('.rate i');
+      let selected = -1;
+
+      stars.forEach((star, idx) => {
+        star.addEventListener('mouseover', () => {
+          stars.forEach((s, i) => {
+            s.className = i <= idx ? 'fa-solid fa-star lit' : 'fa-regular fa-star';
+          });
+        });
+
+        star.addEventListener('mouseout', () => {
+          stars.forEach((s, i) => {
+            s.className = i <= selected ? 'fa-solid fa-star lit' : 'fa-regular fa-star';
+          });
+        });
+
+        star.addEventListener('click', () => {
+          selected = idx;
+          stars.forEach((s, i) => {
+            s.className = i <= selected ? 'fa-solid fa-star lit' : 'fa-regular fa-star';
+          });
+        });
+      });
+    </script>
+
+    <!-- js code for footer -->
+
+<script>
+// تبديل بين Sign In و Sign Up
+const signinTab = document.getElementById('signin-tab');
+const signupTab = document.getElementById('signup-tab');
+const signinForm = document.getElementById('signin-form');
+const signupForm = document.getElementById('signup-form');
+
+const switchToSignup = document.getElementById('switch-to-signup');
+
+signinTab.addEventListener('click', () => {
+    signinTab.classList.add('active');
+    signupTab.classList.remove('active');
+    signinForm.classList.remove('hidden');
+    signupForm.classList.add('hidden');
+});
+
+signupTab.addEventListener('click', () => {
+    signupTab.classList.add('active');
+    signinTab.classList.remove('active');
+    signupForm.classList.remove('hidden');
+    signinForm.classList.add('hidden');
+});
+
+switchToSignup.addEventListener('click', () => {
+    signupTab.click();
+});
+
+// التحكم في التبويب حسب الـ Link من الـ Navbar
+document.addEventListener("DOMContentLoaded", function() {
+    
+    const hash = window.location.hash;   // #signin   أو   #signup
+
+    const signinTab = document.getElementById('signin-tab');
+    const signupTab = document.getElementById('signup-tab');
+    const signinForm = document.getElementById('signin-form');
+    const signupForm = document.getElementById('signup-form');
+
+    if (hash === "#signup") {
+        // تفعيل Sign Up
+        signinTab.classList.remove('active');
+        signupTab.classList.add('active');
+        signinForm.classList.add('hidden');
+        signupForm.classList.remove('hidden');
+    } 
+    else {
+        // تفعيل Sign In (افتراضي)
+        signinTab.classList.add('active');
+        signupTab.classList.remove('active');
+        signinForm.classList.remove('hidden');
+        signupForm.classList.add('hidden');
+    }
+});
+</script>
+</body>
+</html>
