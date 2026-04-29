@@ -54,7 +54,7 @@
 }
 
 * {
-  font-size: var(--font-size);
+  /* font-size: var(--font-size); */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -63,6 +63,8 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: #f4f6fb;
+  overflow-x: 0;
+  overflow-y: 0;
 }
 
 .container {
@@ -204,6 +206,23 @@ html {
   background-color: navy;
   color: white;
 }
+
+.navbar .container .rightSide .logout {
+  width: 150px;
+  padding: 10px 0;
+  background-color: red;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  transition: 0.5s;
+  margin-top: 2px;
+}
+
+.navbar .container .rightSide .logout:hover {
+  width: 155px;
+  padding: 12px 0;
+}
+
 /* end navbar */
 
 /* SECTION */

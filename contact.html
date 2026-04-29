@@ -50,10 +50,18 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
 
-          <div class="buttons">
+          <div class="buttons" id="authLinks">
             <a href="sign_in&up.html#signin" class="signin">Sign In</a>
             <a href="sign_in&up.html#signup" class="signup">Sign Up</a>
           </div>
+          <button
+            class="logout"
+            id="logoutBtn"
+            style="display: none"
+            onclick="logout()"
+          >
+            Logout
+          </button>
         </div>
       </div>
     </div>
@@ -247,5 +255,26 @@
     </script>
 
     <!-- js code for footer -->
+
+    <!-- يشيل ال sign in من فوق -->
+    <script>
+      window.onload = function () {
+        const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+        if (isLoggedIn === "true") {
+          document.getElementById("authLinks").style.display = "none";
+          document.getElementById("logoutBtn").style.display = "block";
+        } else {
+          document.getElementById("authLinks").style.display = "block";
+          document.getElementById("logoutBtn").style.display = "none";
+        }
+      };
+
+      function logout() {
+        localStorage.removeItem("isLoggedIn");
+        window.location.href = "sign_in&up.html";
+      }
+    </script>
+    <!-- يشيل ال sign in من فوق -->
   </body>
 </html>

@@ -52,7 +52,7 @@
 }
 
 * {
-  font-size: var(--font-size);
+  /* font-size: var(--font-size); */
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -67,6 +67,9 @@ body {
 .container {
   padding: 0 10px;
   margin: auto;
+    display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 @media (min-width: 768px) {
@@ -199,6 +202,21 @@ html {
   padding: 9px 22px;
   background-color: navy;
   color: white;
+}
+
+.navbar .container .rightSide .logout {
+  width: 150px;
+  padding: 10px 0;
+  background-color: red;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  transition: 0.5s;
+}
+
+.navbar .container .rightSide .logout:hover {
+  width: 155px;
+  padding: 12px 0;
 }
 
 /* end navbar */
