@@ -103,11 +103,10 @@ html {
   height: 75px;
   padding-top: 15px;
   padding-bottom: 75px;
-  position: fixed;
+  position: relative;
   width: 100%;
   z-index: 1000;
   background-color: white;
-  top: 0;
 }
 
 .navbar .container {
@@ -141,6 +140,13 @@ html {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   margin: 5px;
 }
+
+@media (max-width: 1200px) {
+  .navbar .container .search {
+    display: none;
+  }
+}
+
 .navbar .container .search input {
   width: 350px;
   border: 0;
@@ -174,6 +180,7 @@ html {
 .navbar .container .rightSide ul li a:hover {
   color: gold;
 }
+
 .navbar .container .rightSide .buttons a {
   padding: 8px 20px;
   margin: 0 5px;
@@ -215,12 +222,40 @@ html {
   border-radius: 10px;
   color: white;
   transition: 0.5s;
-  margin-top: 2px;
 }
 
 .navbar .container .rightSide .logout:hover {
   width: 155px;
   padding: 12px 0;
+}
+
+.navbar .container .menu {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar .container .rightSide {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #ffffff;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    display: none;
+    text-align: center;
+  }
+
+  .navbar .container .rightSide.active {
+    display: flex;
+  }
+
+  .navbar .container .menu {
+    display: block;
+  }
 }
 
 /* end navbar */
@@ -250,11 +285,17 @@ html {
   background: #fff;
   padding: 30px;
   border-radius: 15px;
-  width: 790px;
   text-align: left;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   transition: 0.5s;
   margin-right: 40px;
+}
+
+@media (max-width: 1200px) {
+  .form-box {
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
 }
 
 .form-box:hover {
@@ -536,7 +577,7 @@ footer .container {
   margin-top: 50px;
   padding: 20px 15px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.35);
+  color: gold;
   font-size: 13px;
 }
 

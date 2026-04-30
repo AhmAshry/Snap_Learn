@@ -101,11 +101,10 @@ html {
   height: 75px;
   padding-top: 15px;
   padding-bottom: 75px;
-  position: fixed;
+  position: relative;
   width: 100%;
   z-index: 1000;
   background-color: white;
-  top: 0;
 }
 
 .navbar .container {
@@ -139,6 +138,13 @@ html {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   margin: 5px;
 }
+
+@media (max-width: 1200px) {
+  .navbar .container .search {
+    display: none;
+  }
+}
+
 .navbar .container .search input {
   width: 350px;
   border: 0;
@@ -172,6 +178,7 @@ html {
 .navbar .container .rightSide ul li a:hover {
   color: gold;
 }
+
 .navbar .container .rightSide .buttons a {
   padding: 8px 20px;
   margin: 0 5px;
@@ -220,12 +227,41 @@ html {
   padding: 12px 0;
 }
 
+.navbar .container .menu {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar .container .rightSide {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #ffffff;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    display: none;
+    text-align: center;
+  }
+
+  .navbar .container .rightSide.active {
+    display: flex;
+  }
+
+  .navbar .container .menu {
+    display: block;
+  }
+}
+
 /* end navbar */
 
 /* start form */
 
 .form {
-  width: 100%;
+  /* width: 100%; */
   transition: 0.5s;
   margin-top: 150px;
   height: 1380px;
@@ -243,6 +279,23 @@ html {
   padding: 50px 0;
   transition: 0.5s;
 }
+
+@media (min-width: 768px) {
+  .form .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .form .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .form .container {
+    width: 1170px;
+  }
+}
+
 .form .container:hover {
   box-shadow: rgba(0, 0, 0, 0.6) 0px 5px 15px;
 }
@@ -261,7 +314,7 @@ html {
 }
 .row-one {
   margin-bottom: 15px;
-  width: 100%;
+  /* width: 100%; */
 }
 .field {
   display: flex;
@@ -293,7 +346,7 @@ textarea {
   transition: 0.5s;
 }
 
-.submit:hover{
+.submit:hover {
   transform: translateY(5px);
 }
 
@@ -306,6 +359,98 @@ textarea {
   border-radius: 10px;
   transition: 0.5s;
   text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .submit a {
+    font-size: 20px;
+    padding: 10px 100px;
+  }
+
+  .form .container {
+    width: 600px;
+    padding: 50px;
+  }
+
+  .row-two {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .form {
+    transition: 0.5s;
+    margin-top: 150px;
+    height: 1700px;
+  }
+
+  .form input {
+    width: 550px;
+  }
+}
+
+@media (max-width: 605px) {
+  .form .container {
+    width: 400px;
+    padding: 50px;
+  }
+
+  .form h2 {
+    margin-bottom: 30px;
+    font-size: 20px;
+  }
+
+  .form {
+    transition: 0.5s;
+    margin-top: 150px;
+    height: 1800px;
+  }
+
+  .form input {
+    width: 350px;
+  }
+}
+
+@media (max-width: 401px) {
+  .form .container {
+    width: 300px;
+    padding: 50px;
+  }
+
+  .form {
+    transition: 0.5s;
+    margin-top: 150px;
+    height: 1900px;
+  }
+
+  .form input {
+    width: 250px;
+  }
+
+  .submit a {
+    font-size: 15px;
+    padding: 10px 50px;
+  }
+}
+
+@media (min-width: 768px) {
+  .submit a {
+    font-size: 20px;
+    padding: 10px 200px;
+  }
+}
+@media (min-width: 992px) {
+  .submit a {
+    font-size: 20px;
+    padding: 10px 340px;
+  }
+}
+@media (min-width: 1200px) {
+  .submit a {
+    font-size: 20px;
+    padding: 10px 500px;
+  }
 }
 
 .submit a:hover {
@@ -488,7 +633,7 @@ footer .container {
   margin-top: 50px;
   padding: 20px 15px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.35);
+  color: gold;
   font-size: 13px;
 }
 

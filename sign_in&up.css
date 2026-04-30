@@ -52,7 +52,9 @@ html {
   height: 75px;
   padding-top: 15px;
   padding-bottom: 75px;
+  position: relative;
   width: 100%;
+  z-index: 1000;
   background-color: white;
 }
 
@@ -87,6 +89,13 @@ html {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   margin: 5px;
 }
+
+@media (max-width: 1200px) {
+  .navbar .container .search {
+    display: none;
+  }
+}
+
 .navbar .container .search input {
   width: 350px;
   border: 0;
@@ -154,6 +163,50 @@ html {
   color: white;
 }
 
+.navbar .container .rightSide .logout {
+  width: 150px;
+  padding: 10px 0;
+  background-color: red;
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  transition: 0.5s;
+}
+
+.navbar .container .rightSide .logout:hover {
+  width: 155px;
+  padding: 12px 0;
+}
+
+.navbar .container .menu {
+  font-size: 28px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar .container .rightSide {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #ffffff;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    display: none;
+    text-align: center;
+  }
+
+  .navbar .container .rightSide.active {
+    display: flex;
+  }
+
+  .navbar .container .menu {
+    display: block;
+  }
+}
+
 /* end navbar */
 
 
@@ -203,6 +256,12 @@ html {
 .auth-left-content p {
     font-size: 18px;
     opacity: 0.95;
+}
+
+@media (max-width:597px) {
+  .auth-left{
+    display: none;
+  }
 }
 
 /* الجانب الأيمن (الفورم) */
@@ -481,7 +540,7 @@ footer .container {
   margin-top: 50px;
   padding: 20px 15px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.35);
+  color: gold;
   font-size: 13px;
 }
 

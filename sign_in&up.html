@@ -18,6 +18,7 @@
     <title>Snap Learn</title>
   </head>
   <body>
+
     <!-- start navbar -->
     <div class="navbar">
       <div class="container">
@@ -30,7 +31,7 @@
           <input type="text" placeholder="Search courses..." />
         </div>
 
-        <div class="rightSide">
+        <div class="rightSide" id="rightSide">
           <ul>
             <li><a href="home.html">About us</a></li>
             <li><a href="all_courses.html">All Courses</a></li>
@@ -43,9 +44,17 @@
             <a href="sign_in&up.html#signin" class="signin">Sign In</a>
             <a href="sign_in&up.html#signup" class="signup">Sign Up</a>
           </div>
-          <button id="logoutBtn" style="display: none" onclick="logout()">
+          <button
+            class="logout"
+            id="logoutBtn"
+            style="display: none"
+            onclick="logout()"
+          >
             Logout
           </button>
+        </div>
+        <div class="menu" id="menuRightSide">
+          <i class="fa-solid fa-bars"></i>
         </div>
       </div>
     </div>
@@ -274,8 +283,6 @@
 
     <!-- عشان لما يدوس علي الsign in يشيلها من النافبار -->
 
-    <button onclick="login()">Sign In</button>
-
     <script>
       function login() {
         localStorage.setItem("isLoggedIn", "true"); // 👈 دي أهم حاجة
@@ -284,5 +291,9 @@
     </script>
 
     <!-- عشان لما يدوس علي الsign in يشيلها من النافبار -->
+
+      <script src="navbar.js"></script>
+
+
   </body>
 </html>
